@@ -15,13 +15,21 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Center(
-              child: Text(
-            'Hello World',
-            style: TextStyle(color: Colors.pink, backgroundColor: Colors.amber),
-          )),
+        home: Scaffold(
+          body: SafeArea(
+            child: Row(children: <Widget>[
+              const Padding(padding: EdgeInsets.all(5)),
+              helloWorldText()
+            ]),
+          ),
         ));
+  }
+
+  Text helloWorldText() {
+    return const Text(
+      'Hello World',
+      style: TextStyle(
+          color: Colors.pink, fontSize: 36, backgroundColor: Colors.amber),
+    );
   }
 }
